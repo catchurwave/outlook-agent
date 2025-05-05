@@ -14,6 +14,9 @@ app.post('/create', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Agent Outlook lancé sur http://localhost:${process.env.PORT}`);
+// Correction ici : port par défaut 3000 si process.env.PORT est vide
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`✅ Agent Outlook lancé sur http://localhost:${PORT}`);
 });
